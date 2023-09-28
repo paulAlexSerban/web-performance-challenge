@@ -19,15 +19,29 @@
         <!-- END CSS that includes @import -->
 
         <!-- START Sync JS and CSS - src and inline -->
+        <link rel="stylesheet" href="styles/components/cookieLayer.css" />
+        <link rel="stylesheet" href="styles/components/disclaimer.css" />
+        <link rel="stylesheet" href="styles/components/footer.css" />
+        <link rel="stylesheet" href="styles/components/form.css" />
+        <link rel="stylesheet" href="styles/components/header.css" />
+        <link rel="stylesheet" href="styles/components/hero.css" />
+        <link rel="stylesheet" href="styles/components/logo.css" />
+        <link rel="stylesheet" href="styles/components/swiper.css" />
+        <link rel="stylesheet" href="styles/components/teaser.css" />
+        <link rel="stylesheet" href="styles/generics/reset.css" />
+        <link rel="stylesheet" href="styles/generics/utils.css" />
+        <link rel="stylesheet" href="styles/variables.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+        <link rel="stylesheet" href="styles/fonts.css" />
         <link rel="stylesheet" href="http://slowfil.es/file?type=css&delay=1000&sync-in-head" fetchpriority="low" />
 
-        <link
+        <!-- <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossorigin="anonymous"
             fetchpriority="low"
-        />
+        /> -->
         <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
         <!-- END Sync JS and CSS - src and inline -->
@@ -58,15 +72,30 @@
 
         <!-- START prefetch / prerender -->
 
+        <link rel="preconnect" href="blackhole.webpagetest.org" />
+        <link rel="dns-prefetch" href="blackhole.webpagetest.org" />
+
         <!-- END prefetch / prerender -->
 
         <!-- START SEO and meta tags -->
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 
-        <!-- @TODO: reorder-->
 
         <!-- <link rel="preload" href="background.jpg" as="image" /> -->
-
+        <!-- <script defer>
+            !(function (d, s, id) {
+                var js,
+                    fjs = d.getElementsByTagName(s)[0];
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.setAttribute('defer', '');
+                    js.setAttribute('async', '');
+                    js.src = 'https://blackhole.webpagetest.org/';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            })(document, 'script', 'weatherwidget-io-js');
+        </script> -->
         <script defer>
             // Adobe Target pre-hiding code snippet
             (function (win, doc, style, timeout) {
@@ -313,18 +342,6 @@
                         data-theme="original"
                         >MUNICH WEATHER</a
                     >
-                    <script defer>
-                        !(function (d, s, id) {
-                            var js,
-                                fjs = d.getElementsByTagName(s)[0];
-                            if (!d.getElementById(id)) {
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = 'https://blackhole.webpagetest.org/';
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }
-                        })(document, 'script', 'weatherwidget-io-js');
-                    </script>
                 </section>
 
                 <section class="main__video main__section">

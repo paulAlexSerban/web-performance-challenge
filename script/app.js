@@ -1,4 +1,4 @@
-(() => {
+
     const CONTENT_BREAKING_NEWS =
         'BREAKING NEWS: 5 people arrested for non designing responsively ***** Sprite popularity drops even further after new, less sugary, drink introduction.*****';
     const CONTENT_ARTICLE_TEASERS = [
@@ -84,5 +84,8 @@
         cookieLayerInit();
     };
 
-    initApp();
-})();
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initApp();
+    });

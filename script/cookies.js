@@ -44,5 +44,5 @@ const cookieLayerInit = () => {
 window.addEventListener('load', () => {
     setTimeout(() => {
         cookieLayerInit();
-    }, 1000);
+    }, 4000);
 });

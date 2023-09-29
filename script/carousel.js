@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+window.addEventListener('scroll', () => {
     const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
         loop: true,
@@ -8,4 +8,4 @@ window.addEventListener('load', () => {
             disableOnInteraction: false,
         },
     });
-});
+}, { once: true });

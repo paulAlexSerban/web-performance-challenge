@@ -33,13 +33,20 @@ const JSblocking = () => {
     }
 };
 
-function loadAsyncCSS() {
+function loadDeferredAssets() {
     const body = document.querySelector('body');
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'http://slowfil.es/file?type=css&delay=1000&sync-in-head';
     link.fetchPriority = 'low';
     body.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'http://slowfil.es/file?type=js&delay=2000&sync-in-head';
+    script.async = true;
+    script.defer = true;
+    script.fetchPriority = 'low';
+    body.appendChild(script);
 }
 
 const initApp = () => {
@@ -47,8 +54,11 @@ const initApp = () => {
     dynamicContent();
     setTimeout(() => console.log('Hello World!'), 3000);
     setTimeout(() => JSblocking(), 0);
-    loadAsyncCSS();
 };
+
+window.addEventListener('scroll', () => {
+    loadDeferredAssets();
+}, { once: true })
 
 window.addEventListener('load', () => {
     initApp();

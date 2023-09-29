@@ -4,7 +4,8 @@
   "description": "Welcome to the Web Performance and Accessibility Challenge. This repository contains code for the website deployed on [GitHub Pages](https://netcentric.github.io/web-performance-challenge) that is full of web performance and accessibility bad practices. Idea of the challenge is to find and fix as many issues as possible.",
   "main": "index.js",
   "scripts": {
-    "sass": "sass styles/index.scss dist/styles/index.css --style=compressed --no-source-map"
+    "sass": "sass styles/index.scss dist/styles/index.css --style=compressed --no-source-map",
+    "postsass": "cp -rfv fonts/* dist/fonts"
   },
   "keywords": [],
   "author": "",

@@ -40,7 +40,6 @@
         <!-- @TODO: check use, use vanilla and remove -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-
         <script src="https://slowfil.es/file?type=js&delay=2000"></script>
 
         <!-- @TODO: load minified version, defer, and load only on demand -->
@@ -54,76 +53,76 @@
         <script src="script/a11y.js"></script>
         <!-- @TODO: remove from main thered -->
         <script>
-          // Adobe Target pre-hiding code snippet
-          (function (win, doc, style, timeout) {
-              var STYLE_ID = 'at-body-style';
+            // Adobe Target pre-hiding code snippet
+            (function (win, doc, style, timeout) {
+                var STYLE_ID = 'at-body-style';
 
-              function getParent() {
-                  return doc.getElementsByTagName('head')[0];
-              }
+                function getParent() {
+                    return doc.getElementsByTagName('head')[0];
+                }
 
-              function addStyle(parent, id, def) {
-                  if (!parent) {
-                      return;
-                  }
+                function addStyle(parent, id, def) {
+                    if (!parent) {
+                        return;
+                    }
 
-                  var style = doc.createElement('style');
-                  style.id = id;
-                  style.innerHTML = def;
-                  parent.appendChild(style);
-              }
+                    var style = doc.createElement('style');
+                    style.id = id;
+                    style.innerHTML = def;
+                    parent.appendChild(style);
+                }
 
-              function removeStyle(parent, id) {
-                  if (!parent) {
-                      return;
-                  }
+                function removeStyle(parent, id) {
+                    if (!parent) {
+                        return;
+                    }
 
-                  var style = doc.getElementById(id);
+                    var style = doc.getElementById(id);
 
-                  if (!style) {
-                      return;
-                  }
+                    if (!style) {
+                        return;
+                    }
 
-                  parent.removeChild(style);
-              }
+                    parent.removeChild(style);
+                }
 
-              addStyle(getParent(), STYLE_ID, style);
-              setTimeout(function () {
-                  removeStyle(getParent(), STYLE_ID);
-              }, timeout);
-          })(window, document, 'body {opacity: 0 !important}', 3000);
-      </script>
+                addStyle(getParent(), STYLE_ID, style);
+                setTimeout(function () {
+                    removeStyle(getParent(), STYLE_ID);
+                }, timeout);
+            })(window, document, 'body {opacity: 0 !important}', 3000);
+        </script>
 
-      <!-- @TODO: remove from main thread -->
-      <script>
-          // advertisment mock
-          const initAd = () => {
-              const adSpace = document.querySelector('.main__advertising');
-              const gif =
-                  '<div style="width:400px;max-width:100%;"><div style="height:0;padding-bottom:52.4%;position:relative;"><iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe></div></div>';
-              setTimeout(() => (adSpace.innerHTML = gif), 3000);
-          };
-          // Slow JS
-          function wait(ms) {
-              var start = Date.now(),
-                  now = start;
-              while (now - start < ms) {
-                  now = Date.now();
-              }
-          }
+        <!-- @TODO: remove from main thread -->
+        <script>
+            // advertisment mock
+            const initAd = () => {
+                const adSpace = document.querySelector('.main__advertising');
+                const gif =
+                    '<div style="width:400px;max-width:100%;"><div style="height:0;padding-bottom:52.4%;position:relative;"><iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe></div></div>';
+                setTimeout(() => (adSpace.innerHTML = gif), 3000);
+            };
+            // Slow JS
+            function wait(ms) {
+                var start = Date.now(),
+                    now = start;
+                while (now - start < ms) {
+                    now = Date.now();
+                }
+            }
 
-          // async CSS
-          // @TODO: avoid rendering markup on the client that may contain references to document subresources using JavaScript.
-          function loadMobileCSS() {
-              $('head').append(`<link rel="stylesheet" type="text/css" href="styles/mobile.css">`);
-          }
+            // async CSS
+            // @TODO: avoid rendering markup on the client that may contain references to document subresources using JavaScript.
+            function loadMobileCSS() {
+                $('head').append(`<link rel="stylesheet" type="text/css" href="styles/mobile.css">`);
+            }
 
-          wait(2000);
-          window.addEventListener('load', () => {
-              initAd();
-              loadMobileCSS();
-          });
-      </script>
+            wait(2000);
+            window.addEventListener('load', () => {
+                initAd();
+                loadMobileCSS();
+            });
+        </script>
         <!-- END Sync JS and CSS - src and inline -->
 
         <!-- START preload -->
@@ -140,8 +139,7 @@
         <!-- END prefetch / prerender -->
 
         <!-- START SEO and meta tags -->
-        <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
-
+        <link rel="shortcut icon" href="logo.svg" type="image/x-icon" />
     </head>
     <body>
         <div id="cookie-vue">
@@ -192,8 +190,8 @@
                         <div class="swiper-wrapper">
                             <!-- Slides -->
                             <div class="swiper-slide lazy">
-                              <!-- @TODO: adjust quality, format and size following unsplash API -->
-                              <!-- @TODO: preconnect with unsplash-->
+                                <!-- @TODO: adjust quality, format and size following unsplash API -->
+                                <!-- @TODO: preconnect with unsplash-->
                                 <img
                                     src="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1170&q=100"
                                     alt="Person taking a bite of food"
@@ -214,7 +212,7 @@
                         href="fake-link.html"
                         aria-label="Top 10 waterfalls to analyse this week"
                     >
-                    <!-- @TODO: adjust quality, format and size following unsplash API -->
+                        <!-- @TODO: adjust quality, format and size following unsplash API -->
                         <img
                             src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
                             data-src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&h=400&q=100"
@@ -228,7 +226,7 @@
                         href="fake-link.html"
                         aria-label="Bouncing rates increased signifincantly last week"
                     >
-                    <!-- @TODO: adjust quality, format and size following unsplash API -->
+                        <!-- @TODO: adjust quality, format and size following unsplash API -->
                         <img
                             src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
                             data-src="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=png&fit=crop&w=1180&q=80"
@@ -292,16 +290,20 @@
                         >MUNICH WEATHER</a
                     >
                     <script>
-                        !(function (d, s, id) {
-                            var js,
-                                fjs = d.getElementsByTagName(s)[0];
-                            if (!d.getElementById(id)) {
-                                js = d.createElement(s);
-                                js.id = id;
-                                js.src = 'https://blackhole.webpagetest.org/';
-                                fjs.parentNode.insertBefore(js, fjs);
-                            }
-                        })(document, 'script', 'weatherwidget-io-js');
+                      // use load to avoid render blocking and load only when fully loaded
+                        window.addEventListener('load', function () {
+                            !(function (d, s, id) {
+                                var js,
+                                    fjs = d.getElementsByTagName(s)[0];
+                                if (!d.getElementById(id)) {
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.async = true; // Ensure the script loads asynchronously.
+                                    js.src = 'https://blackhole.webpagetest.org/';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }
+                            })(document, 'script', 'weatherwidget-io-js');
+                        });
                     </script>
                 </section>
 

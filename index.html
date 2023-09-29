@@ -18,8 +18,9 @@
         <link rel="preconnect" href="https://player.vimeo.com" />
         <link rel="preconnect" href="blackhole.webpagetest.org" />
         <link rel="dns-prefetch" href="blackhole.webpagetest.org" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com">
-        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net"">
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+        <link rel="preconnect" href="https://meyerweb.com">
         <!-- END Preconnect -->
 
         <!-- START Script ASYNC -->
@@ -31,14 +32,9 @@
         <!-- END CSS that includes @import -->
 
         <!-- START Sync JS and CSS - src and inline -->
+        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" fetchpriority="low">
         <link rel="stylesheet" type="text/css" href="styles/main.css" fetchpriority="low" />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="styles/mobile.css"
-            fetchpriority="low"
-            media="screen and (max-width: 750px)"
-        />
+        <link rel="stylesheet" type="text/css" href="styles/mobile.css" fetchpriority="low" media="screen and (max-width: 750px)" />
 
         <!-- <link
             rel="stylesheet"
@@ -47,10 +43,7 @@
             crossorigin="anonymous"
             fetchpriority="low"
         /> -->
-        <!-- <link
-            href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap"
-            rel="stylesheet"
-            type="text/css"
+        <!-- 
         /> -->
         <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" type="text/css" /> -->
         <!-- END Sync JS and CSS - src and inline -->
@@ -58,6 +51,7 @@
         <!-- START preload -->
         <link rel="preload" href="fonts/alegreya-v29-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="preload" href="fonts/alegreya-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="https://fonts.gstatic.com/s/architectsdaughter/v18/KtkxAKiDZI_td1Lkx62xHZHDtgO_Y-bvTYlg4-7jA-U.woff2" as="font" type="font/woff2" crossorigin />
 
         <!-- END preload -->
 
@@ -70,17 +64,17 @@
             crossorigin="anonymous"
         ></script> -->
 
-
         <script src="script/app.js" defer></script>
-
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
         <script src="script/carousel.js" defer></script>
         <script src="https://slowfil.es/file?type=js&delay=2000" defer></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" defer></script>
+        <script src="https://unpkg.com/browse/vuex@4.1.0/dist/vuex.global.prod.js" defer></script>
+        <script src="script/cookies.js" defer></script>
         <!-- END script defer -->
 
         <!-- START prefetch / prerender -->
-
-
 
         <!-- END prefetch / prerender -->
 
@@ -102,16 +96,16 @@
                 }
             })(document, 'script', 'weatherwidget-io-js');
         </script> -->
-
     </head>
     <body>
-        <link rel="stylesheet" href="styles/non-critical.css" fetchpriority="low">
+        
 
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" defer></script>
-        <script src="https://unpkg.com/browse/vuex@4.1.0/dist/vuex.global.prod.js" defer></script>
-        <script src="script/cookies.js" defer></script>
         <div id="cookie-vue">
-            <cookie-layer class="cookieLayer__base cookieLayer__base--accepted" v-show="displayCookieBox" v-on:accept="acceptCookies()" />
+            <cookie-layer
+                class="cookieLayer__base cookieLayer__base--accepted"
+                v-show="displayCookieBox"
+                v-on:accept="acceptCookies()"
+            />
         </div>
         <header class="header__base">
             <div class="header__content">
@@ -155,41 +149,39 @@
                         aria-label="Local restaurants finally optimising time to first bite"
                     >
                         <!-- Additional required wrapper -->
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" fetchpriority="low">
+                        <link
+                            rel="stylesheet"
+                            href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+                            fetchpriority="low"
+                        />
                         <div class="swiper-wrapper">
                             <!-- Slides -->
                             <div class="swiper-slide lazy">
                                 <img
-                                    srcset="
-                                        https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60 800w,
-                                        https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=620&q=60  400w
-                                    "
-                                    sizes="(max-width: 600px) 100vw, 800px"
-                                    src="assets/bite.webp"
-                                    alt="Person taking a bite of food"
                                     fetchpriority="high"
+                                    alt="Person taking a bite of food"
+                                    srcset="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60 800w,
+                                            https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=620&q=60  480w"
+                                    sizes="(max-width: 479px) 480px, 800px"
+                                    src="assets/bite.webp"
                                 />
                             </div>
                             <div class="swiper-slide">
                                 <img
-                                    srcset="
-                                        https://images.unsplash.com/photo-1529973565457-a60a2ccf750d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60 800w,
-                                        https://images.unsplash.com/photo-1529973565457-a60a2ccf750d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=620&q=60  400w
-                                    "
+                                    srcset="https://images.unsplash.com/photo-1529973565457-a60a2ccf750d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60 800w,
+                                            https://images.unsplash.com/photo-1529973565457-a60a2ccf750d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=620&q=60  480w"
                                     src="https://images.unsplash.com/photo-1529973565457-a60a2ccf750d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=620&q=60"
-                                    sizes="(max-width: 600px) 100vw, 800px"
+                                    sizes="(max-width: 479px) 480px, 800px"
                                     alt="Another person taking a bite of food"
                                     fetchpriority="low"
                                 />
                             </div>
                             <div class="swiper-slide">
                                 <img
-                                    srcset="
-                                        https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60 800w,
-                                        https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=620&q=60  400w
-                                    "
+                                    srcset="https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=60 800w,
+                                            https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=620&q=60  480w"
                                     src="https://images.unsplash.com/photo-1592861956120-e524fc739696?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=620&q=60"
-                                    sizes="(max-width: 600px) 100vw, 800px"
+                                    sizes="(max-width: 479px) 480px, 800px"
                                     alt="And another person taking a bite of food"
                                     fetchpriority="low"
                                 />
@@ -204,11 +196,9 @@
                         aria-label="Top 10 waterfalls to analyse this week"
                     >
                         <img
-                            srcset="
-                                https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&h=400&q=60 800w,
-                                https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&h=200&q=60 400w
-                            "
-                            sizes="(max-width: 600px) 100vw, 800px"
+                            srcset="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&h=400&q=60 800w,
+                                    https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&h=200&q=60 480w"
+                            sizes="(max-width: 479px) 480px, 800px"
                             src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
                             alt="Waterfall in the woods"
                             class="hero__img"
@@ -217,22 +207,17 @@
 
                         <div class="hero__teaserText">Top 10 waterfalls to analyse this week</div>
                     </a>
-                    <a
-                        class="hero__teaser div3"
+                    <a  class="hero__teaser div3"
                         href="fake-link.html"
-                        aria-label="Bouncing rates increased signifincantly last week"
-                    >
+                        aria-label="Bouncing rates increased signifincantly last week">
                         <img
-                            srcset="
-                                https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=400&q=60 800w,
-                                assets/bounce.webp 400w
-                            "
-                            sizes="(max-width: 600px) 100vw, 800px"
+                            srcset="https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=400&q=60 800w,
+                                    assets/bounce.webp 480w"
+                            sizes="(max-width: 479px) 480px, 800px"
                             src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
                             alt="Child jumping on a trampoline"
                             class="hero__img"
-                            loading="lazy"
-                        />
+                            loading="lazy"/>
 
                         <div class="hero__teaserText">Bouncing rates increased signifincantly last week</div>
                     </a>
@@ -245,9 +230,14 @@
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">First Party</a></h3>
                                 <img
-                                    src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
+
+                                srcset="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=960&q=60 800w,
+                                        https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=480&q=60 480w"
+                                    sizes="(max-width: 479px) 480px, 800px" 
+                                    src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=480&q=60"
                                     class="teaser__image"
                                     alt="Many cakes on a table"
+                                    loading="lazy"
                                 />
                                 <p class="teaser__text"></p>
                             </article>
@@ -256,9 +246,13 @@
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">Second Party</a></h3>
                                 <img
-                                    src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
+                                srcset="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=960&q=60 800w,
+                                        https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=480&q=60 480w"
+                                    src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=480&q=60"
+                                    sizes="(max-width: 479px) 480px, 800px" 
                                     class="teaser__image"
                                     alt="People toasting with wine glasses"
+                                    loading="lazy"
                                 />
                                 <p class="teaser__text"></p>
                             </article>
@@ -267,9 +261,13 @@
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">Third Party</a></h3>
                                 <img
-                                    src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
+                                    srcset="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=480&q=60 800w,
+                                            https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=480&q=60 480w"
+                                    src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=480&q=60"
+                                    sizes="(max-width: 479px) 480px, 800px" 
                                     class="teaser__image"
                                     alt="People throwing color powder in a disco club"
+                                    loading="lazy"
                                 />
                                 <p class="teaser__text"></p>
                             </article>
@@ -291,7 +289,7 @@
 
                 <section class="main__video main__section">
                     <h2 class="visually-hidden">Video and feedback form</h2>
-                    <iframe
+                    <!-- <iframe
                         src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=0&loop=1&byline=0&muted=1&controls=0 "
                         width="640"
                         height="360"
@@ -299,7 +297,7 @@
                         allow="fullscreen; picture-in-picture"
                         allowfullscreen
                         loading="lazy"
-                    ></iframe>
+                    ></iframe> -->
                     <form class="form__base">
                         <div class="form__intro">
                             Something about lighthouses, describing point of the video we are putting here to prove how
@@ -422,5 +420,6 @@
                 loadMobileCSS();
             });
         </script>
+        <link rel="stylesheet" href="styles/non-critical.css" fetchpriority="low" />
     </body>
 </html>

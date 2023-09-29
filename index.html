@@ -70,8 +70,7 @@
             crossorigin="anonymous"
         ></script> -->
 
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" defer></script>
-        <script src="https://unpkg.com/browse/vuex@4.1.0/dist/vuex.global.prod.js" defer></script>
+
         <script src="script/app.js" defer></script>
 
         <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
@@ -107,8 +106,12 @@
     </head>
     <body>
         <link rel="stylesheet" href="styles/non-critical.css" fetchpriority="low">
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js" defer></script>
+        <script src="https://unpkg.com/browse/vuex@4.1.0/dist/vuex.global.prod.js" defer></script>
+        <script src="script/cookies.js" defer></script>
         <div id="cookie-vue">
-            <cookie-layer class="cookieLayer__base" v-show="displayCookieBox" v-on:accept="acceptCookies()" />
+            <cookie-layer class="cookieLayer__base cookieLayer__base--accepted" v-show="displayCookieBox" v-on:accept="acceptCookies()" />
         </div>
         <header class="header__base">
             <div class="header__content">
@@ -152,6 +155,7 @@
                         aria-label="Local restaurants finally optimising time to first bite"
                     >
                         <!-- Additional required wrapper -->
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" fetchpriority="low">
                         <div class="swiper-wrapper">
                             <!-- Slides -->
                             <div class="swiper-slide lazy">
@@ -161,7 +165,7 @@
                                         https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=620&q=60  400w
                                     "
                                     sizes="(max-width: 600px) 100vw, 800px"
-                                    src="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=620&q=60"
+                                    src="assets/bite.webp"
                                     alt="Person taking a bite of food"
                                     fetchpriority="high"
                                 />
@@ -221,7 +225,7 @@
                         <img
                             srcset="
                                 https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=400&q=60 800w,
-                                https://images.unsplash.com/photo-1646271912756-44f11896cfea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=200&q=60 400w
+                                assets/bounce.webp 400w
                             "
                             sizes="(max-width: 600px) 100vw, 800px"
                             src="https://media2.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif"
@@ -392,16 +396,17 @@
                 setTimeout(() => (adSpace.innerHTML = gif), 3000);
             };
             // Slow JS
-            // function wait(ms) {
-            //     var start = Date.now(),
-            //         now = start;
-            //     while (now - start < ms) {
-            //         now = Date.now();
-            //     }
-            // }
+            function wait(ms) {
+                var start = Date.now(),
+                    now = start;
+                while (now - start < ms) {
+                    now = Date.now();
+                }
+            }
 
             const body = document.querySelector('body');
 
+            wait(2000);
             // async CSS
             function loadMobileCSS() {
                 const link = document.createElement('link');
@@ -412,17 +417,8 @@
                 body.appendChild(link);
             }
 
-            function loadSwiperCSS() {
-                const link = document.createElement('link');
-                link.rel = 'stylesheet';
-                link.href = 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css';
-                link.setAttribute('fetchpriority', 'low');
-                body.appendChild(link);
-            }
-
             document.addEventListener('DOMContentLoaded', () => {
                 initAd();
-                loadSwiperCSS()
                 loadMobileCSS();
             });
         </script>

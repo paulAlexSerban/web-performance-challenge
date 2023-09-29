@@ -7,6 +7,8 @@
         <!-- START Preconnect -->
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
         <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <!-- END Preconnect -->
 
         <!-- START Script ASYNC -->
@@ -18,7 +20,7 @@
         <!-- END CSS that includes @import -->
 
         <!-- START Sync JS and CSS - src and inline -->
-
+        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" />
         <!-- @TODO: split in critical and non critical-->
         <link rel="stylesheet" type="text/css" href="dist/styles/index.css" />
         <link rel="stylesheet" type="text/css" href="styles/mobile.css" media="screen and (max-width: 750px)" />
@@ -110,8 +112,6 @@
                             />
                             <!-- Slides -->
                             <div class="swiper-slide">
-                                <!-- @TODO: adjust quality, format and size following unsplash API -->
-                                <!-- @TODO: preconnect with unsplash-->
                                 <img
                                     src="assets/bite.webp"
                                     alt="Person taking a bite of food"
@@ -138,14 +138,12 @@
                         </div>
                         <div class="swiper-text">Local restaurants finally optimising time to first bite</div>
                     </a>
-                    <!-- @TODO: remove from main thread and defer -->
 
                     <a
                         class="hero__teaser div2"
                         href="fake-link.html"
                         aria-label="Top 10 waterfalls to analyse this week"
                     >
-                        <!-- @TODO: adjust quality, format and size following unsplash API -->
                         <img
                             src="assets/waterfalls.webp"
                             class="hero__img"
@@ -160,7 +158,6 @@
                         href="fake-link.html"
                         aria-label="Bouncing rates increased signifincantly last week"
                     >
-                        <!-- @TODO: adjust quality, format and size following unsplash API -->
                         <img
                             src="assets/bounce.webp"
                             class="hero__img"
@@ -178,7 +175,6 @@
                         <li class="teaser__item">
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">First Party</a></h3>
-                                <!-- @TODO: adjust quality, format and size following unsplash API -->
                                 <img
                                     src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
                                     class="teaser__image"
@@ -192,7 +188,6 @@
                         <li class="teaser__item">
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">Second Party</a></h3>
-                                <!-- @TODO: adjust quality, format and size following unsplash API -->
                                 <img
                                     src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
                                     class="teaser__image"
@@ -206,7 +201,6 @@
                         <li class="teaser__item">
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">Third Party</a></h3>
-                                <!-- @TODO: adjust quality, format and size following unsplash API -->
                                 <img
                                     src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
                                     class="teaser__image"
@@ -250,8 +244,6 @@
 
                 <section class="main__video main__section">
                     <h2 class="visually-hidden">Video and feedback form</h2>
-                    <!-- @TODO: implement iframe best practices -->
-                    <!-- @TODO: adjust quality, format and size following vimeo API -->
                     <iframe
                         src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=1&loop=1&byline=0&muted=1&controls=0 "
                         width="640"
@@ -351,8 +343,11 @@
             // advertisment mock
             const initAd = () => {
                 const adSpace = document.querySelector('.main__advertising');
-                const gif =
-                    '<div style="width:400px;max-width:100%;"><div style="height:0;padding-bottom:52.4%;position:relative;"><iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe></div></div>';
+                const gif = `<div style="width:400px;max-width:100%;">
+                        <div style="height:0;padding-bottom:52.4%;position:relative;">
+                            <iframe width="500" height="262" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/6wy03z"></iframe>
+                        </div>
+                    </div>`;
                 setTimeout(() => (adSpace.innerHTML = gif), 3000);
             };
             // Slow JS

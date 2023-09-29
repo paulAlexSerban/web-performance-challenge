@@ -112,6 +112,7 @@
           }
 
           // async CSS
+          // @TODO: avoid rendering markup on the client that may contain references to document subresources using JavaScript.
           function loadMobileCSS() {
               $('head').append(`<link rel="stylesheet" type="text/css" href="styles/mobile.css">`);
           }

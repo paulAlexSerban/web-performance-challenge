@@ -7,7 +7,6 @@
         <!-- START Preconnect -->
         <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
         <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <!-- END Preconnect -->
 
@@ -20,13 +19,9 @@
         <!-- END CSS that includes @import -->
 
         <!-- START Sync JS and CSS - src and inline -->
-        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css" />
         <!-- @TODO: split in critical and non critical-->
         <link rel="stylesheet" type="text/css" href="dist/styles/index.css" />
         <link rel="stylesheet" type="text/css" href="styles/mobile.css" media="screen and (max-width: 750px)" />
-
-        <!-- @TODO: use best practice redemanded by google-->
-        <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
 
         <!-- @TODO: remove from main thered -->
 
@@ -35,6 +30,9 @@
         <!-- END Sync JS and CSS - src and inline -->
 
         <!-- START preload -->
+        <link rel="preload" href="assets/bite.webp" as="image" fetchpriority="high" media="(max-width: 479px) 480px" />
+        <link rel="preload" href="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=960&q=60" as="image" fetchpriority="high" media="(min-width: 480px) and (max-width: 959px)" />
+        <link rel="preload" href="https://images.unsplash.com/flagged/photo-1579632993381-847f6a71a3cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1280&q=60" as="image" fetchpriority="high" media="(min-width: 960px)">
         <link rel="preload" href="fonts/alegreya-v29-latin-regular.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="preload" href="fonts/alegreya-v29-latin-900.woff2" as="font" type="font/woff2" crossorigin />
         <!-- END preload -->
@@ -125,6 +123,7 @@
                                     alt="Person taking a bite of food"
                                     fetchpriority="high"
                                     loading="eager"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="swiper-slide">
@@ -141,6 +140,7 @@
                                     alt="Person eating a burger"
                                     fetchpriority="low"
                                     loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                             <div class="swiper-slide">
@@ -157,6 +157,7 @@
                                     1280px"
                                     fetchpriority="low"
                                     loading="lazy"
+                                    decoding="async"
                                 />
                             </div>
                         </div>

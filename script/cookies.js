@@ -42,7 +42,7 @@ const cookieLayerInit = () => {
 };
 
 window.addEventListener('load', () => {
-    requestIdleCallback(() => {
+    setTimeout(() => {
         cookieLayerInit();
-    });
+    }, 1000);
 });

@@ -201,11 +201,13 @@
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">First Party</a></h3>
                                 <img
-                                    src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
+                                    src="https://images.unsplash.com/photo-1631857455684-a54a2f03665f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=355&q=60"
                                     class="teaser__image"
                                     alt="Many cakes on a table"
                                     fetchpriority="low"
                                     loading="lazy"
+                                    width='355'
+                                    height='320'
                                 />
                                 <p class="teaser__text"></p>
                             </article>
@@ -214,11 +216,13 @@
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">Second Party</a></h3>
                                 <img
-                                    src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
+                                    src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=355&q=60"
                                     class="teaser__image"
                                     alt="People toasting with wine glasses"
                                     fetchpriority="low"
                                     loading="lazy"
+                                    width='355'
+                                    height='320'
                                 />
                                 <p class="teaser__text"></p>
                             </article>
@@ -227,11 +231,13 @@
                             <article class="teaser__base">
                                 <h3 class="teaser__title"><a href="/mock-link-to-article.html">Third Party</a></h3>
                                 <img
-                                    src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=1170&q=60"
+                                    src="https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&fm=avif&fit=crop&w=355&q=60"
                                     class="teaser__image"
                                     alt="People throwing color powder in a disco club"
                                     fetchpriority="low"
                                     loading="lazy"
+                                    width='355'
+                                    height='320'
                                 />
                                 <p class="teaser__text"></p>
                             </article>
@@ -270,7 +276,7 @@
                 <section class="main__video main__section">
                     <h2 class="visually-hidden">Video and feedback form</h2>
                     <iframe
-                        src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=1&loop=1&byline=0&muted=1&controls=0 "
+                        src="https://player.vimeo.com/video/44265326?h=1e8b36c00b&autoplay=1&loop=1&byline=0&muted=1&controls=0"
                         width="640"
                         height="360"
                         frameborder="0"
@@ -362,7 +368,7 @@
                 setTimeout(function () {
                     removeStyle(getParent(), STYLE_ID);
                 }, timeout);
-            })(window, document, 'body {opacity: 0 !important}', 3000);
+            })(window, document, 'body {opacity: 0.1 !important; transition: opacity 0.25s ease-in;}', 3000);
         </script>
         <script>
             // advertisment mock

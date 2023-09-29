@@ -33,6 +33,8 @@
 
 .teaser__image {
   order: -1;
+  width: 100%;
+  object-fit: cover;
 }
 
 .teaser__title {

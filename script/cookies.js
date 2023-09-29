@@ -26,7 +26,7 @@ const cookieLayerInit = () => {
     const vueApp = new Vue({
         el: '#cookie-vue',
         data: {
-            displayCookieBox: true,
+            displayCookieBox: false,
         },
         methods: {
             acceptCookies() {
@@ -36,6 +36,7 @@ const cookieLayerInit = () => {
         },
         mounted() {
             document.body.classList.add('no-scroll');
+            this.displayCookieBox = true;
         },
     });
 };

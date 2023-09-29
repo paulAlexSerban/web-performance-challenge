@@ -6,8 +6,6 @@ const CONTENT_ARTICLE_TEASERS = [
     'This is an article about third party that happened this weekend',
 ];
 
-
-
 const dynamicContent = () => {
     const teasers = document.querySelectorAll('.teaser__text');
     const marqueeBar = document.querySelector('marquee');
@@ -35,12 +33,21 @@ const JSblocking = () => {
     }
 };
 
+function loadAsyncCSS() {
+    const body = document.querySelector('body');
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'http://slowfil.es/file?type=css&delay=1000&sync-in-head';
+    link.fetchPriority = 'low';
+    body.appendChild(link);
+}
+
 const initApp = () => {
     layoutTrashing(20);
     dynamicContent();
     setTimeout(() => console.log('Hello World!'), 3000);
     setTimeout(() => JSblocking(), 0);
-
+    loadAsyncCSS();
 };
 
 window.addEventListener('load', () => {

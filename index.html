@@ -19,10 +19,10 @@
         <!-- START Sync JS and CSS - src and inline -->
 
         <!-- @TODO: do not load in main thread-->
-        <link rel="stylesheet" href="http://slowfil.es/file?type=css&delay=1000&sync-in-head" />
 
         <!-- @TODO: split in critical and non critical-->
-        <link rel="stylesheet" href="dist/styles/index.css" />
+        <link rel="stylesheet" type="text/css" href="dist/styles/index.css" />
+        <link rel="stylesheet" type="text/css" href="styles/mobile.css" media="screen and (max-width: 750px)" />
 
         <!-- @TODO: use best practice redemanded by google-->
         <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet" />
@@ -92,14 +92,21 @@
 
             // async CSS
             // @TODO: avoid rendering markup on the client that may contain references to document subresources using JavaScript.
-            function loadMobileCSS() {
-                $('head').append(`<link rel="stylesheet" type="text/css" href="styles/mobile.css">`);
+            // use a service worker to cache the CSS and serve it from the cache instead of the network.
+
+            function loadAsyncCSS() {
+                const body = document.querySelector('body');
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = 'http://slowfil.es/file?type=css&delay=1000&sync-in-head';
+                link.fetchPriority = 'low';
+                body.appendChild(link);
             }
 
             wait(2000);
             window.addEventListener('load', () => {
                 initAd();
-                loadMobileCSS();
+                loadAsyncCSS();
             });
         </script>
         <!-- END Sync JS and CSS - src and inline -->
@@ -110,9 +117,7 @@
         <!-- END preload -->
 
         <!-- START script defer -->
-        <!-- @TODO: check use, use vanilla and remove -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
-        <script src="https://slowfil.es/file?type=js&delay=2000" defer></script>
+        <script src="https://slowfil.es/file?type=js&delay=2000" async defer></script>
 
         <!-- @TODO: load minified version, defer, and load only on demand -->
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>

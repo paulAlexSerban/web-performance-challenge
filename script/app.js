@@ -79,7 +79,7 @@ const initApp = () => {
     layoutTrashing(20);
     dynamicContent();
     setTimeout(() => console.log('Hello World!'), 3000);
-    JSblocking();
+    setTimeout(() => JSblocking(), 0);
     cookieLayerInit();
 };
 

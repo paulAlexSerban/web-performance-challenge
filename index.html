@@ -37,20 +37,6 @@
         <!-- @TODO: defer to load after user interaction -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
-        <!-- @TODO: check use, use vanilla and remove -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-        <script src="https://slowfil.es/file?type=js&delay=2000"></script>
-
-        <!-- @TODO: load minified version, defer, and load only on demand -->
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-        <script src="https://unpkg.com/vuex"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-        <!-- @TODO: check use and substitute with browser API-->
-        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
-        <script src="script/app.js"></script>
-        <script src="script/a11y.js"></script>
         <!-- @TODO: remove from main thered -->
         <script>
             // Adobe Target pre-hiding code snippet
@@ -131,7 +117,20 @@
         <!-- END preload -->
 
         <!-- START script defer -->
+        <!-- @TODO: check use, use vanilla and remove -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" defer></script>
+        <script src="https://slowfil.es/file?type=js&delay=2000" defer></script>
 
+        <!-- @TODO: load minified version, defer, and load only on demand -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" defer></script>
+        <script src="https://unpkg.com/vuex" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+
+        <!-- @TODO: check use and substitute with browser API-->
+        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js" defer></script>
+        <script src="script/app.js" defer></script>
+        <script src="script/a11y.js" defer></script>
+        <script src="script/carousel.js" defer></script>
         <!-- END script defer -->
 
         <!-- START prefetch / prerender -->
@@ -205,7 +204,6 @@
                         <div class="swiper-text">Local restaurants finally optimising time to first bite</div>
                     </a>
                     <!-- @TODO: remove from main thread and defer -->
-                    <script src="script/carousel.js"></script>
 
                     <a
                         class="hero__teaser div2"
@@ -290,7 +288,7 @@
                         >MUNICH WEATHER</a
                     >
                     <script>
-                      // use load to avoid render blocking and load only when fully loaded
+                        // use load to avoid render blocking and load only when fully loaded
                         window.addEventListener('load', function () {
                             !(function (d, s, id) {
                                 var js,
